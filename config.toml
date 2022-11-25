@@ -1,6 +1,6 @@
 theme = 'ananke'
 title = "Flying Snow Blog"
-baseURL = "https://gohugo-theme-ananke.pages.dev"
+baseURL = "https://flyingsnow31.github.io/"
 languageCode = "zh-cn"
 resourceDir = "../resources"
 

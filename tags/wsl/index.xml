@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>WSL on Flying Snow Blog</title><link>https://flyingsnow31.github.io/tags/wsl/</link><description>Recent content in WSL on Flying Snow Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Fri, 25 Nov 2022 15:23:39 +0800</lastBuildDate><atom:link href="https://flyingsnow31.github.io/tags/wsl/index.xml" rel="self" type="application/rss+xml"/><item><title>WSL指定位置安装</title><link>https://flyingsnow31.github.io/posts/wsl%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</link><pubDate>Fri, 25 Nov 2022 15:23:39 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/wsl%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</guid><description>起因 通过微软商店或WSL &amp;ndash;install安装的WSL会安装在C盘，如果需要安装在其他盘，有如下方法。
+安装时指定 安装包下载 旧版 WSL 的手动安装步骤 | Microsoft Learn
+以上为微软官网的WSL地址，需要通过下载手动安装包进行，页面往下，找到
+{% asset_img image-20221124191507919.png 安装包 %}
+选择一个需要的系统下载即可，这里以Ubuntu20.04为例。
+处理安装包 下载下来的安装包一般为 .appx 文件
+{% asset_img image-20221124193903526.png appx %}
+将其后缀修改为 .zip 或者直接使用压缩软件打开
+{% asset_img image-20221124193948318.png zip%}
+将其解压缩到指定安装位置的地方
+安装 运行 .exe 文件，执行安装过程即可。
+原理 安装后会发现一个 .vhdx 文件被创建在了之前解压指定的文件夹内
+这个就是WSL的虚拟磁盘文件，也就是说，WSL被安装到了指定位置。</description></item></channel></rss>

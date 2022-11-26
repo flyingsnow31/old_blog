@@ -1,6 +1,9 @@
 ---
 title: "WSL指定位置安装"
 date: 2022-11-25T15:23:39+08:00
+description: "将WSL安装到指定目录，而非占用C盘空间"
+tags: ['WSL', 'Ubuntu']
+categories: '软件安装与配置'
 ---
 
 ## 起因

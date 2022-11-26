@@ -9,6 +9,8 @@ SectionPagesMenu = "main"
 Paginate = 3 # this is set low for demonstrating with dummy content. Set to a higher number
 googleAnalytics = ""
 enableRobotsTXT = true
+toc = true
+autoCollapseToc = false
 
 [sitemap]
   changefreq = "monthly"
@@ -25,6 +27,35 @@ enableRobotsTXT = true
   background_color_class = "bg-black"
   recent_posts_number = 3
 
+[[menu.main]]
+  name = "首页"
+  weight = 10
+  identifier = "home"
+  url = "/"
+[[menu.main]]
+  name = "归档"
+  weight = 20
+  identifier = "posts"
+  url = "/posts/"
+[[menu.main]]
+  name = "标签"
+  weight = 30
+  identifier = "tags"
+  url = "/tags/"
+[[menu.main]]
+  name = "分类"
+  weight = 40
+  identifier = "categories"
+  url = "/categories/"
+[[menu.main]]
+  name = "关于"
+  weight = 50
+  identifier = "about"
+  url = "/about/"
+
 [[params.ananke_socials]]
 name = "Gitee"
 url = "https://gitee.com/li_zengyi"
+[[params.ananke_socials]]
+name = "GitHub"
+url = "https://github.com/flyingsnow31"

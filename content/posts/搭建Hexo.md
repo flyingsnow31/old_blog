@@ -1,6 +1,9 @@
 ---
 title: "搭建Hexo"
 date: 2022-11-25T15:23:28+08:00
+description: "Hexo的搭建与安装过程"
+tags: ['hexo', '静态网站']
+categories: '软件安装与配置'
 ---
 
 ## 前言

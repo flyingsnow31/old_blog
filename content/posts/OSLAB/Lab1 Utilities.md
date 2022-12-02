@@ -1,7 +1,6 @@
 ---
 title: "Lab1 Utilities"
 date: 2022-11-26T14:30:58+08:00
-draft: true
 description: "6.S081 Lab1"
 tags: ['操作系统', '6.S081', 'Utilities']
 categories: '实验'

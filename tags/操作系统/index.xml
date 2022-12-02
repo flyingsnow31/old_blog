@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>操作系统 on Flying Snow Blog</title><link>https://flyingsnow31.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</link><description>Recent content in 操作系统 on Flying Snow Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 26 Nov 2022 14:30:58 +0800</lastBuildDate><atom:link href="https://flyingsnow31.github.io/tags/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/index.xml" rel="self" type="application/rss+xml"/><item><title>Lab1 Utilities</title><link>https://flyingsnow31.github.io/posts/oslab/lab1-utilities/</link><pubDate>Sat, 26 Nov 2022 14:30:58 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/oslab/lab1-utilities/</guid><description>本实验用于熟悉xv6和系统调用
+Boot xv6(easy) 启动xv6系统
+首先下载mit提供的针对此次实验设计的xv6版本，而非整体的xv6
+$ git clone git://g.csail.mit.edu/xv6-labs-2020 Cloning into &amp;#39;xv6-labs-2020&amp;#39;... ... $ cd xv6-labs-2020 $ git checkout util Branch &amp;#39;util&amp;#39; set up to track remote branch &amp;#39;util&amp;#39; from &amp;#39;origin&amp;#39;. Switched to a new branch &amp;#39;util&amp;#39; 在这一步可以将其远程库切换成自己的。
+使用 make qemu 指令编译并通过qemu启动xv6
+make qemu riscv64-unknown-elf-gcc -c -o kernel/entry.o kernel/entry.S riscv64-unknown-elf-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -DSOL_UTIL -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie -c -o kernel/start.o kernel/start.</description></item><item><title>6.S081安装</title><link>https://flyingsnow31.github.io/posts/oslab/6.s081%E7%AE%80%E4%BB%8B%E4%B8%8E%E5%AE%89%E8%A3%85/</link><pubDate>Fri, 25 Nov 2022 18:26:46 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/oslab/6.s081%E7%AE%80%E4%BB%8B%E4%B8%8E%E5%AE%89%E8%A3%85/</guid><description>简介 整体实验介绍 6.S081即MIT原来的6.828，在20年后，此课程改为本科生修的6.S081和研究生修的6.828两部分，其中，6.S081与原本的实验更为相似，但难度有所降低，同时修改了部分实验的要求，研究生上的6.828则更加带有研究的意味。
+整个实验分为十个lab，将逐步补充并实现一个操作系统xv6
+xv6介绍 Xv6是由麻省理工学院(MIT)为操作系统工程的课程（代号6.828）,开发的一个教学目的的操作系统。Xv6是在x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6)。
+近几年，MIT将其在RISC-V精简指令集上重新实现了XV6，并以此作为6.S081的实验操作系统使用，原有基于x86的系统不再更新。
+官方文档 https://pdos.csail.mit.edu/6.828/2020/tools.html
+安装过程 系统环境 使用WSL Ubuntu2004进行 对于WSL安装到指定位置问题，可以查看之前的文章。 这里建议如果使用Ubuntu系统，使用2004版本，过高或过低都可能存在riscv的安装问题，而其交叉编译工具下载很慢，且不容易切换源。
+安装 完成更换源等一系列初始步骤后，执行如下命令，安装一些软件
+sudo apt-get install git build-essential gdb-multiarch qemu-system-misc gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu 注意，如果使用Ubuntu20，由于qemu的一次更新，可能会与此次实验用到的xv6系统产生冲突，需要卸载，并重新安装指定的旧一些的版本。
+sudo apt-get remove qemu-system-misc sudo apt-get install qemu-system-misc=1:4.2-3ubuntu6 接下来安装qemu的5.1版本
+wget https://download.qemu.org/qemu-5.1.0.tar.xz tar xf qemu-5.1.0.tar.xz cd qemu-5.1.0 ./configure --disable-kvm --disable-werror --prefix=/usr/local --target-list=&amp;#34;riscv64-softmmu&amp;#34; make sudo make install 测试安装 执行如下几步，测试安装的版本是否正确
+riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 ... qemu-system-riscv64 --version QEMU emulator version 5.1.0 在此，由于ubuntu的源版本，安装的 riscv64-unknown-elf-gcc 版本为9，由于可以正常使用，并不再重新安装，如有安装10.1版本的需求，可参考如下操作</description></item></channel></rss>

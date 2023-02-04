@@ -1,4 +1,4 @@
-theme = 'ananke'
+theme = 'wowchemy'
 title = "Flying Snow Blog"
 baseURL = "https://flyingsnow31.github.io/"
 languageCode = "zh-cn"

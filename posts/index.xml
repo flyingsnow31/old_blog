@@ -1,9 +1,45 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Flying Snow Blog</title><link>https://flyingsnow31.github.io/posts/</link><description>Recent content in Posts on Flying Snow Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 26 Nov 2022 14:30:58 +0800</lastBuildDate><atom:link href="https://flyingsnow31.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Lab1 Utilities</title><link>https://flyingsnow31.github.io/posts/oslab/lab1-utilities/</link><pubDate>Sat, 26 Nov 2022 14:30:58 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/oslab/lab1-utilities/</guid><description>本实验用于熟悉xv6和系统调用
-Boot xv6(easy) 启动xv6系统
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Flying Snow Blog</title><link>https://flyingsnow31.github.io/posts/</link><description>Recent content in Posts on Flying Snow Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 04 Feb 2023 20:08:22 +0800</lastBuildDate><atom:link href="https://flyingsnow31.github.io/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>YCSB测试文档</title><link>https://flyingsnow31.github.io/posts/ycsb%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</link><pubDate>Sat, 04 Feb 2023 20:08:22 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/ycsb%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</guid><description>YCSB测试文档 测试工具 使用YCSB进行测试
+简介 Yahoo! Cloud Serving Benchmark (YCSB) 。
+Yahoo公司的一个用来对云服务进行基础测试的工具。
+使用Java语言实现，如果需要对一个数据库进行性能测试
+需要通过java编写客户端代码
+YCSB自带了很多主流数据库的客户端代码，可以直接使用
+https://github.com/brianfrankcooper/YCSB
+安装使用 编译环境 需要Maven 3, java &amp;gt;= 8
+编译 由于网络原因，可能需要对maven进行换源
+参考 (22条消息) Ubuntu20安装maven并切换阿里镜像源_一时半会想不出的博客-CSDN博客_maven ubuntu 换源
+git clone https://github.com/brianfrankcooper/YCSB cd YCSB # 编译所有数据库客户端 mvn clean package # 编译指定数据库客户端。e.g. mongodb mvn -pl site.ycsb:mongodb-binding -am clean package 对于指定数据库如何编译使用，可以在代码clone下来后，进入指定数据库名字的目录内README文件查看
+运行 推荐使用 shell 脚本执行。
+执行文件在 ./bin 中，共有四个文件，其中执行文件有三种，分别为python2，shell与bat文件。
+如使用shell脚本，记得将所有readme文件中的 ./bin/ycsb 更换为 ./bin/ycsb.sh
+这三个执行文件的逻辑是：解析命令行、设置java环境，加载java-libs，封装成可以执行的java命令，并执行
+# 命令参数 ./bin/ycsb.sh [command] [database] [options] # [command] # load: 载入数据 # run: 执行测试 # [database] # 指定测试的数据库 # redis, rocksdb.</description></item><item><title>Nvmedirect配置文档</title><link>https://flyingsnow31.github.io/posts/nvmedirect%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3/</link><pubDate>Sat, 04 Feb 2023 20:08:04 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/nvmedirect%E9%85%8D%E7%BD%AE%E6%96%87%E6%A1%A3/</guid><description>nvmedirect配置文档 环境需求 使用的环境为Ubuntu 14.04/16.04
+需要注意的是，直接安装好的Ubuntu 14.04/Ubuntu 16.04的linux内核版本为4.4。
+注意：安装Ubuntu虚拟机时，需要将硬盘设置为NVMe而非SCSI
+但是nvmedirect需要在4.11的内核版本上进行，所以需要升级一下内核版本。
+方法如下
+升级 Ubuntu Linux 内核的几种不同方法 | Linux 中国 (qq.com)
+通过多方比较，选用第一种方法，即使用dpkg手动安装内核。
+升级内核 预编译好的内核文件网址如下，从中找到需要的版本，即4.11
+Index of /~kernel-ppa/mainline (ubuntu.com)
+根据自己的硬件环境，找到对应的内核版本。
+将linux-headers-...-all.deb, linux-headers-...-generic-....deb, linux-image-....deb共三个文件下载，如果存在linux-module-....deb也需要下载。
+将其放在同一个目录下。
+执行如下命令，通过dpkg进行安装
+$ sudo dpkg --install *.deb 然后系统自动执行安装过程，等待一小会儿后，安装完成，重启系统
+$ sudo reboot 重新进入系统，查看内核版本
+$ uname -r 4.11.0-041100-generic 内核升级完成
+其他需求 需要安装gcc, make等编译相关工具，gcc版本需要在5
+更新gcc 由于ubuntu14的apt最高版本为gcc4，因此需要增加源安装
+添加源
+$ sudo add-apt-repository ppa:ubuntu-toolchain-r/test $ sudo apt-get update 安装指定版本gcc
+$ sudo apt-get install -y gcc-5 设置gcc各个版本的优先级
+$ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 90 切换gcc版本</description></item><item><title>Lab1 Utilities</title><link>https://flyingsnow31.github.io/posts/oslab/lab1-utilities/</link><pubDate>Sat, 26 Nov 2022 14:30:58 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/oslab/lab1-utilities/</guid><description>Lab1 Utilities 本实验用于熟悉xv6和系统调用
+Boot xv6 (easy) 启动xv6系统
 首先下载mit提供的针对此次实验设计的xv6版本，而非整体的xv6
 $ git clone git://g.csail.mit.edu/xv6-labs-2020 Cloning into &amp;#39;xv6-labs-2020&amp;#39;... ... $ cd xv6-labs-2020 $ git checkout util Branch &amp;#39;util&amp;#39; set up to track remote branch &amp;#39;util&amp;#39; from &amp;#39;origin&amp;#39;. Switched to a new branch &amp;#39;util&amp;#39; 在这一步可以将其远程库切换成自己的。
 使用 make qemu 指令编译并通过qemu启动xv6
-make qemu riscv64-unknown-elf-gcc -c -o kernel/entry.o kernel/entry.S riscv64-unknown-elf-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -DSOL_UTIL -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie -c -o kernel/start.o kernel/start.</description></item><item><title>6.S081安装</title><link>https://flyingsnow31.github.io/posts/oslab/6.s081%E7%AE%80%E4%BB%8B%E4%B8%8E%E5%AE%89%E8%A3%85/</link><pubDate>Fri, 25 Nov 2022 18:26:46 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/oslab/6.s081%E7%AE%80%E4%BB%8B%E4%B8%8E%E5%AE%89%E8%A3%85/</guid><description>简介 整体实验介绍 6.S081即MIT原来的6.828，在20年后，此课程改为本科生修的6.S081和研究生修的6.828两部分，其中，6.S081与原本的实验更为相似，但难度有所降低，同时修改了部分实验的要求，研究生上的6.828则更加带有研究的意味。
+make qemu riscv64-unknown-elf-gcc -c -o kernel/entry.o kernel/entry.S riscv64-unknown-elf-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -DSOL_UTIL -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie -c -o kernel/start.</description></item><item><title>6.S081安装</title><link>https://flyingsnow31.github.io/posts/oslab/6.s081%E7%AE%80%E4%BB%8B%E4%B8%8E%E5%AE%89%E8%A3%85/</link><pubDate>Fri, 25 Nov 2022 18:26:46 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/oslab/6.s081%E7%AE%80%E4%BB%8B%E4%B8%8E%E5%AE%89%E8%A3%85/</guid><description>简介 整体实验介绍 6.S081即MIT原来的6.828，在20年后，此课程改为本科生修的6.S081和研究生修的6.828两部分，其中，6.S081与原本的实验更为相似，但难度有所降低，同时修改了部分实验的要求，研究生上的6.828则更加带有研究的意味。
 整个实验分为十个lab，将逐步补充并实现一个操作系统xv6
 xv6介绍 Xv6是由麻省理工学院(MIT)为操作系统工程的课程（代号6.828）,开发的一个教学目的的操作系统。Xv6是在x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6)。
 近几年，MIT将其在RISC-V精简指令集上重新实现了XV6，并以此作为6.S081的实验操作系统使用，原有基于x86的系统不再更新。
@@ -16,7 +52,6 @@ wget https://download.qemu.org/qemu-5.1.0.tar.xz tar xf qemu-5.1.0.tar.xz cd qem
 riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 ... qemu-system-riscv64 --version QEMU emulator version 5.1.0 在此，由于ubuntu的源版本，安装的 riscv64-unknown-elf-gcc 版本为9，由于可以正常使用，并不再重新安装，如有安装10.1版本的需求，可参考如下操作</description></item><item><title>WSL指定位置安装</title><link>https://flyingsnow31.github.io/posts/wsl%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</link><pubDate>Fri, 25 Nov 2022 15:23:39 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/wsl%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</guid><description>起因 通过微软商店或WSL &amp;ndash;install安装的WSL会安装在C盘，如果需要安装在其他盘，有如下方法。
 安装时指定 安装包下载 旧版 WSL 的手动安装步骤 | Microsoft Learn
 以上为微软官网的WSL地址，需要通过下载手动安装包进行，页面往下，找到
-{% asset_img image-20221124191507919.png 安装包 %}
 选择一个需要的系统下载即可，这里以Ubuntu20.04为例。
 处理安装包 下载下来的安装包一般为 .appx 文件
 {% asset_img image-20221124193903526.png appx %}

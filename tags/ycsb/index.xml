@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>YCSB on Flying Snow Blog</title><link>https://flyingsnow31.github.io/tags/ycsb/</link><description>Recent content in YCSB on Flying Snow Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 04 Feb 2023 20:08:22 +0800</lastBuildDate><atom:link href="https://flyingsnow31.github.io/tags/ycsb/index.xml" rel="self" type="application/rss+xml"/><item><title>YCSB测试文档</title><link>https://flyingsnow31.github.io/posts/ycsb%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</link><pubDate>Sat, 04 Feb 2023 20:08:22 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/ycsb%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</guid><description>YCSB测试文档 测试工具 使用YCSB进行测试
+简介 Yahoo! Cloud Serving Benchmark (YCSB) 。
+Yahoo公司的一个用来对云服务进行基础测试的工具。
+使用Java语言实现，如果需要对一个数据库进行性能测试
+需要通过java编写客户端代码
+YCSB自带了很多主流数据库的客户端代码，可以直接使用
+https://github.com/brianfrankcooper/YCSB
+安装使用 编译环境 需要Maven 3, java &amp;gt;= 8
+编译 由于网络原因，可能需要对maven进行换源
+参考 (22条消息) Ubuntu20安装maven并切换阿里镜像源_一时半会想不出的博客-CSDN博客_maven ubuntu 换源
+git clone https://github.com/brianfrankcooper/YCSB cd YCSB # 编译所有数据库客户端 mvn clean package # 编译指定数据库客户端。e.g. mongodb mvn -pl site.ycsb:mongodb-binding -am clean package 对于指定数据库如何编译使用，可以在代码clone下来后，进入指定数据库名字的目录内README文件查看
+运行 推荐使用 shell 脚本执行。
+执行文件在 ./bin 中，共有四个文件，其中执行文件有三种，分别为python2，shell与bat文件。
+如使用shell脚本，记得将所有readme文件中的 ./bin/ycsb 更换为 ./bin/ycsb.sh
+这三个执行文件的逻辑是：解析命令行、设置java环境，加载java-libs，封装成可以执行的java命令，并执行
+# 命令参数 ./bin/ycsb.sh [command] [database] [options] # [command] # load: 载入数据 # run: 执行测试 # [database] # 指定测试的数据库 # redis, rocksdb.</description></item></channel></rss>

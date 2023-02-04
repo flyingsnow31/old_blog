@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>碎碎念 on Flying Snow Blog</title>
+    <link>https://flyingsnow31.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/</link>
+    <description>Recent content in 碎碎念 on Flying Snow Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh-cn</language>
+    <lastBuildDate>Fri, 25 Nov 2022 14:51:19 +0800</lastBuildDate><atom:link href="https://flyingsnow31.github.io/tags/%E7%A2%8E%E7%A2%8E%E5%BF%B5/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>写在前面</title>
+      <link>https://flyingsnow31.github.io/posts/%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/</link>
+      <pubDate>Fri, 25 Nov 2022 14:51:19 +0800</pubDate>
+      
+      <guid>https://flyingsnow31.github.io/posts/%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/</guid>
+      <description>大学的时候陆陆续续搞过几次博客，wordpress有，hexo有，稀土掘金，csdn都有，但后面也都没有再继续下去。
+读研以来，深感一个文档的重要性，对于一些重复性的工作，往复的找看过无数遍的文档属实浪费时间精力，同时也为了记录一下自己的研究生乃至以后的工作生活。
+重新开始使用hexo搭建博客，这一次，也不讲究过多主题花样，将注意力集中于文字内容上，并坚持下去。
+注 然后现在切换成了Hugo，hhh</description>
+    </item>
+    
+  </channel>
+</rss>

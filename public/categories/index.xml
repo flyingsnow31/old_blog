@@ -2,9 +2,37 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Flying Snow Blog</title>
-    <link>https://gohugo-theme-ananke.pages.dev/categories/</link>
+    <link>https://flyingsnow31.github.io/categories/</link>
     <description>Recent content in Categories on Flying Snow Blog</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language><atom:link href="https://gohugo-theme-ananke.pages.dev/categories/index.xml" rel="self" type="application/rss+xml" />
+    <language>zh-cn</language>
+    <lastBuildDate>Sat, 26 Nov 2022 14:30:58 +0800</lastBuildDate><atom:link href="https://flyingsnow31.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>实验</title>
+      <link>https://flyingsnow31.github.io/categories/%E5%AE%9E%E9%AA%8C/</link>
+      <pubDate>Sat, 26 Nov 2022 14:30:58 +0800</pubDate>
+      
+      <guid>https://flyingsnow31.github.io/categories/%E5%AE%9E%E9%AA%8C/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>软件安装与配置</title>
+      <link>https://flyingsnow31.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link>
+      <pubDate>Fri, 25 Nov 2022 15:23:39 +0800</pubDate>
+      
+      <guid>https://flyingsnow31.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>日常</title>
+      <link>https://flyingsnow31.github.io/categories/%E6%97%A5%E5%B8%B8/</link>
+      <pubDate>Fri, 25 Nov 2022 14:51:19 +0800</pubDate>
+      
+      <guid>https://flyingsnow31.github.io/categories/%E6%97%A5%E5%B8%B8/</guid>
+      <description></description>
+    </item>
+    
   </channel>
 </rss>

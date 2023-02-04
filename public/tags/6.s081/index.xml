@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Flying Snow Blog</title>
-    <link>https://flyingsnow31.github.io/</link>
-    <description>Recent content on Flying Snow Blog</description>
+    <title>6.S081 on Flying Snow Blog</title>
+    <link>https://flyingsnow31.github.io/tags/6.s081/</link>
+    <description>Recent content in 6.S081 on Flying Snow Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-cn</language>
-    <lastBuildDate>Sat, 26 Nov 2022 14:30:58 +0800</lastBuildDate><atom:link href="https://flyingsnow31.github.io/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 26 Nov 2022 14:30:58 +0800</lastBuildDate><atom:link href="https://flyingsnow31.github.io/tags/6.s081/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lab1 Utilities</title>
       <link>https://flyingsnow31.github.io/posts/oslab/lab1-utilities/</link>
@@ -38,71 +38,6 @@ sudo apt-get install git build-essential gdb-multiarch qemu-system-misc gcc-risc
 sudo apt-get remove qemu-system-misc sudo apt-get install qemu-system-misc=1:4.2-3ubuntu6 接下来安装qemu的5.1版本
 wget https://download.qemu.org/qemu-5.1.0.tar.xz tar xf qemu-5.1.0.tar.xz cd qemu-5.1.0 ./configure --disable-kvm --disable-werror --prefix=/usr/local --target-list=&amp;#34;riscv64-softmmu&amp;#34; make sudo make install 测试安装 执行如下几步，测试安装的版本是否正确
 riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 ... qemu-system-riscv64 --version QEMU emulator version 5.1.0 在此，由于ubuntu的源版本，安装的 riscv64-unknown-elf-gcc 版本为9，由于可以正常使用，并不再重新安装，如有安装10.1版本的需求，可参考如下操作</description>
-    </item>
-    
-    <item>
-      <title>WSL指定位置安装</title>
-      <link>https://flyingsnow31.github.io/posts/wsl%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</link>
-      <pubDate>Fri, 25 Nov 2022 15:23:39 +0800</pubDate>
-      
-      <guid>https://flyingsnow31.github.io/posts/wsl%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</guid>
-      <description>起因 通过微软商店或WSL &amp;ndash;install安装的WSL会安装在C盘，如果需要安装在其他盘，有如下方法。
-安装时指定 安装包下载 旧版 WSL 的手动安装步骤 | Microsoft Learn
-以上为微软官网的WSL地址，需要通过下载手动安装包进行，页面往下，找到
-{% asset_img image-20221124191507919.png 安装包 %}
-选择一个需要的系统下载即可，这里以Ubuntu20.04为例。
-处理安装包 下载下来的安装包一般为 .appx 文件
-{% asset_img image-20221124193903526.png appx %}
-将其后缀修改为 .zip 或者直接使用压缩软件打开
-{% asset_img image-20221124193948318.png zip%}
-将其解压缩到指定安装位置的地方
-安装 运行 .exe 文件，执行安装过程即可。
-原理 安装后会发现一个 .vhdx 文件被创建在了之前解压指定的文件夹内
-这个就是WSL的虚拟磁盘文件，也就是说，WSL被安装到了指定位置。</description>
-    </item>
-    
-    <item>
-      <title>搭建Hexo</title>
-      <link>https://flyingsnow31.github.io/posts/%E6%90%AD%E5%BB%BAhexo/</link>
-      <pubDate>Fri, 25 Nov 2022 15:23:28 +0800</pubDate>
-      
-      <guid>https://flyingsnow31.github.io/posts/%E6%90%AD%E5%BB%BAhexo/</guid>
-      <description>前言 在这次hexo的第一篇就记录一下hexo的搭建过程，不得不说，npm就算换源下载也好慢。
-官网Hexo
-基于nodejs和npm，所以要确保系统中安装了这些。
-npm安装配置 npm安装 Node.js (nodejs.org)
-$ node -v v12.22.9 $ npm -v 8.5.1 npm换源 # 淘宝源 npm config set registry https://registry.npmmirror.com/ # 腾讯源 npm config set registry http://mirrors.cloud.tencent.com/npm/ 查看当前镜像
-npm config get registry 官方镜像
-npm config set registry https://registry.npmjs.org 或者使用 nrm 以及 cnpm ，都是一个类似的过程。
-hexo安装配置 全局安装hexo
-npm install -g hexo-cli </description>
-    </item>
-    
-    <item>
-      <title>写在前面</title>
-      <link>https://flyingsnow31.github.io/posts/%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/</link>
-      <pubDate>Fri, 25 Nov 2022 14:51:19 +0800</pubDate>
-      
-      <guid>https://flyingsnow31.github.io/posts/%E5%86%99%E5%9C%A8%E5%89%8D%E9%9D%A2/</guid>
-      <description>大学的时候陆陆续续搞过几次博客，wordpress有，hexo有，稀土掘金，csdn都有，但后面也都没有再继续下去。
-读研以来，深感一个文档的重要性，对于一些重复性的工作，往复的找看过无数遍的文档属实浪费时间精力，同时也为了记录一下自己的研究生乃至以后的工作生活。
-重新开始使用hexo搭建博客，这一次，也不讲究过多主题花样，将注意力集中于文字内容上，并坚持下去。
-注 然后现在切换成了Hugo，hhh</description>
-    </item>
-    
-    <item>
-      <title>About</title>
-      <link>https://flyingsnow31.github.io/about/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>https://flyingsnow31.github.io/about/</guid>
-      <description>欢迎来到李曾一的博客
-目前就读于湖南大学信息科学与工程学院
-本科生2018级
-研究生2022级
-方向主要为操作系统，存储等
-lizengyi@hnu.edu.cn
-欢迎来信交流</description>
     </item>
     
   </channel>

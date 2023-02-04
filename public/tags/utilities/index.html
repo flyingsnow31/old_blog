@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Flying Snow Blog</title>
+    <title>Utilities | Flying Snow Blog</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
     <meta name="description" content="LZY的博客.">
     <meta name="generator" content="Hugo 0.107.0">
@@ -29,14 +29,19 @@
 
     
     
-    <meta property="og:title" content="404 Page not found" />
+      <link href="/tags/utilities/index.xml" rel="alternate" type="application/rss+xml" title="Flying Snow Blog" />
+      <link href="/tags/utilities/index.xml" rel="feed" type="application/rss+xml" title="Flying Snow Blog" />
+      
+    
+    
+    <meta property="og:title" content="Utilities" />
 <meta property="og:description" content="LZY的博客." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://flyingsnow31.github.io/404.html" />
+<meta property="og:url" content="https://flyingsnow31.github.io/tags/utilities/" />
 
-<meta itemprop="name" content="404 Page not found">
+<meta itemprop="name" content="Utilities">
 <meta itemprop="description" content="LZY的博客."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
+<meta name="twitter:title" content="Utilities"/>
 <meta name="twitter:description" content="LZY的博客."/>
 
 	
@@ -47,7 +52,7 @@
     
 
   <header>
-    <div class="bg-black">
+    <div class="pb3-m pb6-l bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -123,17 +128,50 @@
   </div>
 </nav>
 
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          Utilities
+        </h1>
+        
+      </div>
     </div>
   </header>
 
 
     <main class="pb7" role="main">
       
-    <article class="center cf pv5 measure-wide-l">
-      <h1>
-        This is not the page you were looking for
-      </h1>
-    </article>
+  <article class="cf pa3 pa4-m pa4-l">
+    <div class="measure-wide-l center f4 lh-copy nested-copy-line-height nested-links mid-gray">
+      <p>标签为“Utilities”的页面如下</p>
+    </div>
+  </article>
+  <div class="mw8 center">
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100  mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/oslab/lab1-utilities/" class="link black dim">
+        Lab1 Utilities
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      本实验用于熟悉xv6和系统调用
+Boot xv6(easy) 启动xv6系统
+首先下载mit提供的针对此次实验设计的xv6版本，而非整体的xv6
+$ git clone git://g.csail.mit.edu/xv6-labs-2020 Cloning into &#39;xv6-labs-2020&#39;... ... $ cd xv6-labs-2020 $ git checkout util Branch &#39;util&#39; set up to track remote branch &#39;util&#39; from &#39;origin&#39;. Switched to a new branch &#39;util&#39; 在这一步可以将其远程库切换成自己的。
+使用 make qemu 指令编译并通过qemu启动xv6
+make qemu riscv64-unknown-elf-gcc -c -o kernel/entry.o kernel/entry.S riscv64-unknown-elf-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -DSOL_UTIL -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie -c -o kernel/start.o kernel/start.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+  </div>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

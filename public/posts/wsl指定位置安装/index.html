@@ -4,9 +4,9 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     
-    <title>Flying Snow Blog</title>
+    <title>WSL指定位置安装 | Flying Snow Blog</title>
     <meta name="viewport" content="width=device-width,minimum-scale=1">
-    <meta name="description" content="LZY的博客.">
+    <meta name="description" content="将WSL安装到指定目录，而非占用C盘空间">
     <meta name="generator" content="Hugo 0.107.0">
     
     
@@ -29,15 +29,20 @@
 
     
     
-    <meta property="og:title" content="404 Page not found" />
-<meta property="og:description" content="LZY的博客." />
-<meta property="og:type" content="website" />
-<meta property="og:url" content="https://flyingsnow31.github.io/404.html" />
+    <meta property="og:title" content="WSL指定位置安装" />
+<meta property="og:description" content="将WSL安装到指定目录，而非占用C盘空间" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://flyingsnow31.github.io/posts/wsl%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E5%AE%89%E8%A3%85/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2022-11-25T15:23:39+08:00" />
+<meta property="article:modified_time" content="2022-11-25T15:23:39+08:00" />
 
-<meta itemprop="name" content="404 Page not found">
-<meta itemprop="description" content="LZY的博客."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
-<meta name="twitter:description" content="LZY的博客."/>
+<meta itemprop="name" content="WSL指定位置安装">
+<meta itemprop="description" content="将WSL安装到指定目录，而非占用C盘空间"><meta itemprop="datePublished" content="2022-11-25T15:23:39+08:00" />
+<meta itemprop="dateModified" content="2022-11-25T15:23:39+08:00" />
+<meta itemprop="wordCount" content="44">
+<meta itemprop="keywords" content="WSL,Ubuntu," /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="WSL指定位置安装"/>
+<meta name="twitter:description" content="将WSL安装到指定目录，而非占用C盘空间"/>
 
 	
   </head>
@@ -45,6 +50,8 @@
   <body class="ma0 avenir bg-near-white">
 
     
+   
+  
 
   <header>
     <div class="bg-black">
@@ -127,13 +134,90 @@
   </header>
 
 
+
     <main class="pb7" role="main">
       
-    <article class="center cf pv5 measure-wide-l">
-      <h1>
-        This is not the page you were looking for
-      </h1>
-    </article>
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+
+
+
+
+
+
+  <div id="sharing" class="mt3 ananke-socials">
+    
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">WSL指定位置安装</h1>
+      
+      <p class="tracked">
+         <strong>LZY</strong>
+      </p>
+      
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2022-11-25T15:23:39+08:00">十一月 25, 2022</time>
+      
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links mid-gray pr4-l w-two-thirds-l"><h2 id="起因">起因</h2>
+<p>通过微软商店或WSL &ndash;install安装的WSL会安装在C盘，如果需要安装在其他盘，有如下方法。</p>
+<h2 id="安装时指定">安装时指定</h2>
+<h3 id="安装包下载">安装包下载</h3>
+<p><a href="https://learn.microsoft.com/zh-cn/windows/wsl/install-manual">旧版 WSL 的手动安装步骤 | Microsoft Learn</a></p>
+<p>以上为微软官网的WSL地址，需要通过下载手动安装包进行，页面往下，找到</p>
+<p>{% asset_img image-20221124191507919.png 安装包 %}</p>
+<p>选择一个需要的系统下载即可，这里以Ubuntu20.04为例。</p>
+<h3 id="处理安装包">处理安装包</h3>
+<p>下载下来的安装包一般为 <code>.appx</code> 文件</p>
+<p>{% asset_img image-20221124193903526.png appx %}</p>
+<p>将其后缀修改为 <code>.zip</code> 或者直接使用压缩软件打开</p>
+<p>{% asset_img image-20221124193948318.png zip%}</p>
+<p>将其解压缩到<strong>指定安装位置</strong>的地方</p>
+<h3 id="安装">安装</h3>
+<p>运行 <code>.exe</code> 文件，执行安装过程即可。</p>
+<h3 id="原理">原理</h3>
+<p>安装后会发现一个 <code>.vhdx</code> 文件被创建在了之前解压指定的文件夹内</p>
+<p>这个就是WSL的虚拟磁盘文件，也就是说，WSL被安装到了指定位置。</p>
+<ul class="pa0">
+  
+   <li class="list di">
+     <a href="/tags/wsl/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">WSL</a>
+   </li>
+  
+   <li class="list di">
+     <a href="/tags/ubuntu/" class="link f5 grow no-underline br-pill ba ph3 pv2 mb2 dib black sans-serif">Ubuntu</a>
+   </li>
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

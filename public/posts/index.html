@@ -29,14 +29,19 @@
 
     
     
-    <meta property="og:title" content="404 Page not found" />
+      <link href="/posts/index.xml" rel="alternate" type="application/rss+xml" title="Flying Snow Blog" />
+      <link href="/posts/index.xml" rel="feed" type="application/rss+xml" title="Flying Snow Blog" />
+      
+    
+    
+    <meta property="og:title" content="Posts" />
 <meta property="og:description" content="LZY的博客." />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="https://flyingsnow31.github.io/404.html" />
+<meta property="og:url" content="https://flyingsnow31.github.io/posts/" />
 
-<meta itemprop="name" content="404 Page not found">
+<meta itemprop="name" content="Posts">
 <meta itemprop="description" content="LZY的博客."><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="404 Page not found"/>
+<meta name="twitter:title" content="Posts"/>
 <meta name="twitter:description" content="LZY的博客."/>
 
 	
@@ -47,7 +52,7 @@
     
 
   <header>
-    <div class="bg-black">
+    <div class="pb3-m pb6-l bg-black">
       <nav class="pv3 ph3 ph4-ns" role="navigation">
   <div class="flex-l justify-between items-center center">
     <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
@@ -123,17 +128,121 @@
   </div>
 </nav>
 
+      <div class="tc-l pv3 ph3 ph4-ns">
+        <h1 class="f2 f-subheadline-l fw2 light-silver mb0 lh-title">
+          Posts
+        </h1>
+        
+      </div>
     </div>
   </header>
 
 
     <main class="pb7" role="main">
       
-    <article class="center cf pv5 measure-wide-l">
-      <h1>
-        This is not the page you were looking for
-      </h1>
-    </article>
+  <article class="pa3 pa4-ns nested-copy-line-height">
+    <section class="cf ph3 ph5-l pv3 pv4-l f4 tc-l center measure-wide lh-copy mid-gray"></section>
+    <section class="flex-ns flex-wrap justify-around mt5">
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/oslab/lab1-utilities/" class="link black dim">
+        Lab1 Utilities
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      本实验用于熟悉xv6和系统调用
+Boot xv6(easy) 启动xv6系统
+首先下载mit提供的针对此次实验设计的xv6版本，而非整体的xv6
+$ git clone git://g.csail.mit.edu/xv6-labs-2020 Cloning into &#39;xv6-labs-2020&#39;... ... $ cd xv6-labs-2020 $ git checkout util Branch &#39;util&#39; set up to track remote branch &#39;util&#39; from &#39;origin&#39;. Switched to a new branch &#39;util&#39; 在这一步可以将其远程库切换成自己的。
+使用 make qemu 指令编译并通过qemu启动xv6
+make qemu riscv64-unknown-elf-gcc -c -o kernel/entry.o kernel/entry.S riscv64-unknown-elf-gcc -Wall -Werror -O -fno-omit-frame-pointer -ggdb -DSOL_UTIL -MD -mcmodel=medany -ffreestanding -fno-common -nostdlib -mno-relax -I. -fno-stack-protector -fno-pie -no-pie -c -o kernel/start.o kernel/start.
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/oslab/6.s081%E7%AE%80%E4%BB%8B%E4%B8%8E%E5%AE%89%E8%A3%85/" class="link black dim">
+        6.S081安装
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      简介 整体实验介绍 6.S081即MIT原来的6.828，在20年后，此课程改为本科生修的6.S081和研究生修的6.828两部分，其中，6.S081与原本的实验更为相似，但难度有所降低，同时修改了部分实验的要求，研究生上的6.828则更加带有研究的意味。
+整个实验分为十个lab，将逐步补充并实现一个操作系统xv6
+xv6介绍 Xv6是由麻省理工学院(MIT)为操作系统工程的课程（代号6.828）,开发的一个教学目的的操作系统。Xv6是在x86处理器上(x即指x86)用ANSI标准C重新实现的Unix第六版(Unix V6，通常直接被称为V6)。
+近几年，MIT将其在RISC-V精简指令集上重新实现了XV6，并以此作为6.S081的实验操作系统使用，原有基于x86的系统不再更新。
+官方文档 https://pdos.csail.mit.edu/6.828/2020/tools.html
+安装过程 系统环境 使用WSL Ubuntu2004进行 对于WSL安装到指定位置问题，可以查看之前的文章。 这里建议如果使用Ubuntu系统，使用2004版本，过高或过低都可能存在riscv的安装问题，而其交叉编译工具下载很慢，且不容易切换源。
+安装 完成更换源等一系列初始步骤后，执行如下命令，安装一些软件
+sudo apt-get install git build-essential gdb-multiarch qemu-system-misc gcc-riscv64-linux-gnu binutils-riscv64-linux-gnu 注意，如果使用Ubuntu20，由于qemu的一次更新，可能会与此次实验用到的xv6系统产生冲突，需要卸载，并重新安装指定的旧一些的版本。
+sudo apt-get remove qemu-system-misc sudo apt-get install qemu-system-misc=1:4.2-3ubuntu6 接下来安装qemu的5.1版本
+wget https://download.qemu.org/qemu-5.1.0.tar.xz tar xf qemu-5.1.0.tar.xz cd qemu-5.1.0 ./configure --disable-kvm --disable-werror --prefix=/usr/local --target-list=&#34;riscv64-softmmu&#34; make sudo make install 测试安装 执行如下几步，测试安装的版本是否正确
+riscv64-unknown-elf-gcc --version riscv64-unknown-elf-gcc (GCC) 10.1.0 ... qemu-system-riscv64 --version QEMU emulator version 5.1.0 在此，由于ubuntu的源版本，安装的 riscv64-unknown-elf-gcc 版本为9，由于可以正常使用，并不再重新安装，如有安装10.1版本的需求，可参考如下操作
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+        <div class="relative w-100 w-30-l mb4 bg-white">
+          <div class="relative w-100 mb4 bg-white nested-copy-line-height">
+  <div class="bg-white mb3 pa4 gray overflow-hidden">
+    <span class="f6 db">Posts</span>
+    <h1 class="f3 near-black">
+      <a href="/posts/wsl%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E5%AE%89%E8%A3%85/" class="link black dim">
+        WSL指定位置安装
+      </a>
+    </h1>
+    <div class="nested-links f5 lh-copy nested-copy-line-height">
+      起因 通过微软商店或WSL &ndash;install安装的WSL会安装在C盘，如果需要安装在其他盘，有如下方法。
+安装时指定 安装包下载 旧版 WSL 的手动安装步骤 | Microsoft Learn
+以上为微软官网的WSL地址，需要通过下载手动安装包进行，页面往下，找到
+{% asset_img image-20221124191507919.png 安装包 %}
+选择一个需要的系统下载即可，这里以Ubuntu20.04为例。
+处理安装包 下载下来的安装包一般为 .appx 文件
+{% asset_img image-20221124193903526.png appx %}
+将其后缀修改为 .zip 或者直接使用压缩软件打开
+{% asset_img image-20221124193948318.png zip%}
+将其解压缩到指定安装位置的地方
+安装 运行 .exe 文件，执行安装过程即可。
+原理 安装后会发现一个 .vhdx 文件被创建在了之前解压指定的文件夹内
+这个就是WSL的虚拟磁盘文件，也就是说，WSL被安装到了指定位置。
+    </div>
+  </div>
+</div>
+
+        </div>
+      
+    </section>
+    <ul class="pagination pagination-default">
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="First" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;&laquo;</span></a>
+      </li>
+      <li class="page-item disabled">
+        <a aria-disabled="true" aria-label="Previous" class="page-link" role="button" tabindex="-1"><span aria-hidden="true">&laquo;</span></a>
+      </li>
+      <li class="page-item active">
+        <a aria-current="page" aria-label="Page 1" class="page-link" role="button">1</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/2/" aria-label="Page 2" class="page-link" role="button">2</a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/2/" aria-label="Next" class="page-link" role="button"><span aria-hidden="true">&raquo;</span></a>
+      </li>
+      <li class="page-item">
+        <a href="/posts/page/2/" aria-label="Last" class="page-link" role="button"><span aria-hidden="true">&raquo;&raquo;</span></a>
+      </li>
+    </ul></article>
 
     </main>
     <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">

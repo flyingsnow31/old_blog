@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>软件安装与配置 on Flying Snow Blog</title><link>https://flyingsnow31.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link><description>Recent content in 软件安装与配置 on Flying Snow Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 04 Feb 2023 20:08:22 +0800</lastBuildDate><atom:link href="https://flyingsnow31.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml"/><item><title>YCSB测试文档</title><link>https://flyingsnow31.github.io/posts/ycsb%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</link><pubDate>Sat, 04 Feb 2023 20:08:22 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/ycsb%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</guid><description>YCSB测试文档 测试工具 使用YCSB进行测试
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>软件安装与配置 on Flying Snow Blog</title><link>https://flyingsnow31.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/</link><description>Recent content in 软件安装与配置 on Flying Snow Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-cn</language><lastBuildDate>Sat, 04 Feb 2023 20:08:22 +0800</lastBuildDate><atom:link href="https://flyingsnow31.github.io/categories/%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE/index.xml" rel="self" type="application/rss+xml"/><item><title>YCSB测试文档</title><link>https://flyingsnow31.github.io/posts/ycsb%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</link><pubDate>Sat, 04 Feb 2023 20:08:22 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/ycsb%E6%B5%8B%E8%AF%95%E6%96%87%E6%A1%A3/</guid><description>YCSB测试文档 测试工具 使用YCSB进行测试
 简介 Yahoo! Cloud Serving Benchmark (YCSB) 。
 Yahoo公司的一个用来对云服务进行基础测试的工具。
 使用Java语言实现，如果需要对一个数据库进行性能测试
@@ -34,23 +34,4 @@ $ uname -r 4.11.0-041100-generic 内核升级完成
 添加源
 $ sudo add-apt-repository ppa:ubuntu-toolchain-r/test $ sudo apt-get update 安装指定版本gcc
 $ sudo apt-get install -y gcc-5 设置gcc各个版本的优先级
-$ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 90 切换gcc版本</description></item><item><title>WSL指定位置安装</title><link>https://flyingsnow31.github.io/posts/wsl%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</link><pubDate>Fri, 25 Nov 2022 15:23:39 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/wsl%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</guid><description>起因 通过微软商店或WSL &amp;ndash;install安装的WSL会安装在C盘，如果需要安装在其他盘，有如下方法。
-安装时指定 安装包下载 旧版 WSL 的手动安装步骤 | Microsoft Learn
-以上为微软官网的WSL地址，需要通过下载手动安装包进行，页面往下，找到
-选择一个需要的系统下载即可，这里以Ubuntu20.04为例。
-处理安装包 下载下来的安装包一般为 .appx 文件
-{% asset_img image-20221124193903526.png appx %}
-将其后缀修改为 .zip 或者直接使用压缩软件打开
-{% asset_img image-20221124193948318.png zip%}
-将其解压缩到指定安装位置的地方
-安装 运行 .exe 文件，执行安装过程即可。
-原理 安装后会发现一个 .vhdx 文件被创建在了之前解压指定的文件夹内
-这个就是WSL的虚拟磁盘文件，也就是说，WSL被安装到了指定位置。</description></item><item><title>搭建Hexo</title><link>https://flyingsnow31.github.io/posts/%E6%90%AD%E5%BB%BAhexo/</link><pubDate>Fri, 25 Nov 2022 15:23:28 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/%E6%90%AD%E5%BB%BAhexo/</guid><description>前言 在这次hexo的第一篇就记录一下hexo的搭建过程，不得不说，npm就算换源下载也好慢。
-官网Hexo
-基于nodejs和npm，所以要确保系统中安装了这些。
-npm安装配置 npm安装 Node.js (nodejs.org)
-$ node -v v12.22.9 $ npm -v 8.5.1 npm换源 # 淘宝源 npm config set registry https://registry.npmmirror.com/ # 腾讯源 npm config set registry http://mirrors.cloud.tencent.com/npm/ 查看当前镜像
-npm config get registry 官方镜像
-npm config set registry https://registry.npmjs.org 或者使用 nrm 以及 cnpm ，都是一个类似的过程。
-hexo安装配置 全局安装hexo
-npm install -g hexo-cli</description></item></channel></rss>
+$ sudo update-alternatives --install /usr/bin/gcc gcc /usr/bin/gcc-5 90 切换gcc版本</description></item><item><title>WSL指定位置安装</title><link>https://flyingsnow31.github.io/posts/wsl%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</link><pubDate>Fri, 25 Nov 2022 15:23:39 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/wsl%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE%E5%AE%89%E8%A3%85/</guid><description>将WSL安装到指定目录，而非占用C盘空间</description></item><item><title>搭建Hexo</title><link>https://flyingsnow31.github.io/posts/%E6%90%AD%E5%BB%BAhexo/</link><pubDate>Fri, 25 Nov 2022 15:23:28 +0800</pubDate><guid>https://flyingsnow31.github.io/posts/%E6%90%AD%E5%BB%BAhexo/</guid><description>Hexo的搭建与安装过程</description></item></channel></rss>

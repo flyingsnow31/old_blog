@@ -1,1 +1,3 @@
 User-agent: *
+Disallow:
+Sitemap: https://flyingsnow31.github.io/sitemap.xml

@@ -200,6 +200,16 @@ $
 
 执行成功
 
+### 验证
+
+```bash
+$ ./grade-lab-util sleep
+make: 'kernel/kernel' is up to date.
+== Test sleep, no arguments == sleep, no arguments: OK (1.0s) 
+== Test sleep, returns == sleep, returns: OK (1.1s) 
+== Test sleep, makes syscall == sleep, makes syscall: OK (1.0s)
+```
+
 ## pingpong (easy)
 
 实现一个程序，fork一个子进程，在父进程和子进程之间，使用pipe管道进行信息的传递与发送，最后按照格式输出相应的内容和进程号。
@@ -260,7 +270,192 @@ $
 
 执行成功
 
+### 验证
+
+```bash
+./grade-lab-util pingpong
+make: 'kernel/kernel' is up to date.
+== Test pingpong == pingpong: OK (0.6s)
+```
+
 ## prime (moderate)/(hard)
 
 实现一个程序，多个进程相连，形成一个流水线，第一个进程向管道中从2输入到35，后续进程依次打印出其中的素数。
+
+需要熟悉对于管道和文件描述符的操作
+
+```c
+#include "kernel/types.h"
+#include "kernel/stat.h"
+#include "user/user.h"
+
+void prime(int p[2]) {
+    close(p[1]);
+    int p2[2];
+    pipe(p2);
+    int first[1],second[1];
+    if(!read(p[0], first, 4)){
+        return ;
+    }
+    printf("prime %d\n", first[0]);
+    if(fork() == 0) {
+        prime(p2);
+    }
+    else{
+        while(read(p[0], second, 4)) {
+            if(second[0] % first[0] == 0) {
+                continue;
+            }
+            write(p2[1], second, 4);
+        }
+        close(p2[1]);
+    }
+}
+
+int main(int argc, char *argv[]) 
+{
+    int p1[2];
+    pipe(p1);
+    int left[1];
+
+    if(fork() == 0) {
+        prime(p1);
+    }
+    else{
+        for(int i = 2; i <= 35; ++i) {
+            *left = i;
+            write(p1[1], left, 4);
+        }
+        close(p1[1]);
+    }
+    wait(0);
+    exit(0);
+}
+```
+
+### 验证
+
+```bash
+./grade-lab-util prime
+make: 'kernel/kernel' is up to date.
+== Test primes == primes: OK (0.6s)
+```
+
+## find (moderate)
+
+> 实现一个查找程序，查找目录下的指定文件
+
+根据提示，模仿ls.c的程序代码实现，可以发现，可以使用其中的格式化文件命以及遍历目录文件的方式。
+
+值得注意的是，其中的格式化文件名中，会将较短的文件名扩充至一个dirsiz的大小，如果使用此函数与目标文件名进行比较会出错，需要修改。
+
+此外，要注意递归的文件，防止递查询 `.` 和 `..` 目录。
+
+实现代码如下
+
+```c
+#include "kernel/types.h"
+#include "kernel/stat.h"
+#include "user/user.h"
+#include "kernel/fs.h"
+
+char*
+fmtname(char *path)
+{
+  static char buf[DIRSIZ+1];
+  char *p;
+
+  // Find first character after last slash.
+  for(p=path+strlen(path); p >= path && *p != '/'; p--)
+    ;
+  p++;
+
+  // Return blank-padded name.
+  if(strlen(p) >= DIRSIZ)
+    return p;
+  memmove(buf, p, strlen(p));
+  buf[strlen(p)] = 0;
+  //memset(buf+strlen(p), ' ', DIRSIZ-strlen(p));
+  return buf;
+}
+
+void find(char *path, char *target) {
+  char buf[512], *p;
+  int fd;
+  struct dirent de;
+  struct stat st;
+   if((fd = open(path, 0)) < 0){
+    fprintf(2, "ls: cannot open %s\n", path);
+    return;
+  }
+
+  if(fstat(fd, &st) < 0){
+    fprintf(2, "ls: cannot stat %s\n", path);
+    close(fd);
+    return;
+  }
+  //printf("%s\n", path);
+  switch(st.type){
+  case T_FILE:
+    if(strcmp(fmtname(path), target) == 0) {
+      printf("%s\n", path);
+    }
+    break;
+
+  case T_DIR:
+    if(strlen(path) + 1 + DIRSIZ + 1 > sizeof buf){
+      printf("ls: path too long\n");
+      break;
+    }
+    strcpy(buf, path);
+    p = buf+strlen(buf);
+    *p++ = '/';
+    while(read(fd, &de, sizeof(de)) == sizeof(de)){
+      if(de.inum == 0)
+        continue;
+      memmove(p, de.name, DIRSIZ);
+      p[DIRSIZ] = 0;
+      //printf("read: %s\n", fmtname(buf));
+      if(stat(buf, &st) < 0){
+        printf("ls: cannot stat %s\n", buf);
+        continue;
+      }
+      if(st.type == T_FILE && strcmp(fmtname(buf), target) == 0) {
+        printf("%s\n", buf);
+      }
+      else if(st.type == T_DIR) {
+        //printf("t:dir: %s, %d\n", fmtname(buf), strcmp(fmtname(buf), "."));
+        if(strcmp(fmtname(buf), ".") != 0 && strcmp(fmtname(buf), "..") != 0) {
+          find(buf, target);
+        }
+      }
+      }
+    break;
+  }
+  close(fd);
+}
+
+int
+main(int argc, char *argv[])
+{
+
+  if(argc != 3){
+    fprintf(2, "Usage: find files...\n");
+    exit(1);
+  }
+
+  find(argv[1], argv[2]);
+  exit(0);
+}
+
+```
+
+### 验证
+
+```bash
+$ ./grade-lab-util find
+make: 'kernel/kernel' is up to date.
+== Test find, in current directory == find, in current directory: OK (1.0s) 
+== Test find, recursive == find, recursive: OK (1.2s) 
+```
 
